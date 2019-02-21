@@ -27,18 +27,18 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="#Home">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#Data">Data</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="#Dates">Dates</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#Words">Words</a>
           </li>
         </ul>
       </div>
@@ -47,19 +47,118 @@
 
   <!-- Page Content -->
   <div class="container">
-    <div class="row">
+    <div class="row" id="Home">
       <div class="col-md-1"></div>
-      <div class="col-md-10 text-center">
-        <h1 class="mt-5">Geeky love!</h1>
+      <div class="col-md-10">
+        <h1 class="mt-5">Geeky Love!</h1>
         <p class="lead">Happy Anniversary!</p>
         <p>I hope that this is not too much, but if I have the means, why not just do it? I prepared a brief analysis on our WhatsApp conversations through our history together. I found some interesting things about us, I hope you like it :)</p>
-        <ul class="list-unstyled">
-          <li>Bootstrap 4.2.1</li>
-          <li>jQuery 3.3.1</li>
-        </ul>
       </div>
       <div class="col-md-1"></div>
     </div>
+
+
+    <div class="row" id="Data">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h2 class="h2">The Data</h2>
+        <p>I analyzed all the WhatsApp messages we have sent from 13.07.2017 to 21.02.2019. They include a lot of cheesy notes, good morning messages and lots of love. Some interesting facts:  </p>
+        <ul>
+          <li>In total, we have sent 38,996 messages (up to the date of the analysis, of course)</li>
+          <li>We have said the word "honey" XXXX times</li>
+          <li>We have said the word "amo" XXX times</li>
+          <li>On average, we send XXXX messages every day</li>
+          <li>The day of the week that we send on average the most messages</li>
+          <li>The day we sent the most messages is XXXX</li>
+          <li>The day we sent the least messages is XXXX</li>
+        </ul>
+        <p>I wanted to know more about our messaging habits, so I first wanted to see how many messages we have sent to each other:</p>
+        <img src="lea_img/msg_by_person.png" class="img-fluid" alt="Messages by person">
+        <p> It seems that my drunken messages have gone too far :D But really, after we started talking more than 1 year ago, we haven't stopped! </p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row"></div>
+
+    <div class="row" id="Dates">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h2 class="h2">About the Dates</h2>
+
+        <p>The first thing I want to see to begin the analysis is the big picture. I think that data separated each months gives a nice insight: </p>
+        <img src="lea_img/msg_each_month.png" class="img-fluid" alt="Messages each month">
+        <p>The month that we have sent more messages was January 2018, and the one that had the least messages was November 2017 (This is my fault, I'm really REALLY sorry for that)</p>
+        <p>This next plot is a bit messy, because it has the number of all our messages every day: </p>
+        <img src="lea_img/msg_each_day.png" class="img-fluid" alt="Messages each day">
+        <p>We can see that we have had busy conversations, always with something interesting to talk about :) Here are some other intersting facts about our daily messaging routine:</p>
+        <ul >
+          <li>On average, we send 70.02 messages every day</li>
+          <li>The day of the week that we send on average the most messages</li>
+          <li>The day we sent the most messages is 27.04.2018, with 257 notes!</li>
+          <li>There are 12 days that we have talked the least, with only 1 message:
+            <ul>
+              <li>11.11.2017</li>
+              <li>13.03.2018 </li>
+              <li>15.11.2017</li>
+              <li>16.11.2017</li>
+              <li>16.08.2018 </li>
+              <li>18.11.2017</li>
+              <li>19.03.2018 </li>
+              <li>29.12.2018</li>
+              <li>03.10.2018 </li>
+              <li>30.12.2018</li>
+              <li>06.11.2017 </li>
+              <li>09.11.2017</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Now, I want to see if there is a pattern on which day of the week we message the most:</p>
+        <img src="lea_img/msg_each_weekday.png" class="img-fluid" alt="Messages each weekday">
+        <p>Apparently, Tuesdays and Wednesdays are our busiest and least busy days.</p>
+        <p>Finally, at what time do we like to message the most?</p>
+        <img src="lea_img/msg_each_hour.png" class="img-fluid" alt="Messages each hour">
+        <p>I'm not really sure if this graph is correct, but I think it is all in German time, to that explains the messages at 5h, but I have to double check my code.</p>
+
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row" id="Words">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h2 class="h2">About the Words we use</h2>
+        <p>Antoher iteresting thing that I analyzed are the words that we used the most. Without the stop-words, these are the most common words that we use:</p>
+        <img src="lea_img/common_words.png" class="img-fluid" alt="Most common words">
+        <p>There are a couple or remarks I want to make here. First of all, even if the words "I" and "you" are stop-word,  I didn't delete them because I think that they convey a nice meaning. We talk about what happens in our daily life, and we are very interested in hearing what the other has to say. Next comes the smiley ":)", we wish good on the other a lot. Next is the media. Between images and good-night messages, we have sent in 1876 files between us. It is not a misunderstanding that I love hearing your voice, and maybe you like mine too. </p>
+        <p>Other honorable mentions are "honey", "home", "sleep", ":/", "wish", "miss", "te", "bed", "best", "everything", "amo", "thinking", "night", and ":0" which I think we really use a lot (except maybe the last one). </p>
+        <p>I made this to emphasize that communication ahs always been present in our relationship. I appreciate every little message that you send me. You are a very important part of my life, and even though we rely oon WhatsApp to easily communicate every day, I promise that in the future we will not use it as much, because we will be much much closer.</p>
+        <p class="lead">Te amo coraz&oacute;n</p>
+
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <!--Basic form
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h2 class="h2">The data</h2>
+        <p>I hope that this is not too much, but if I have the means, why not just do it? I prepared a brief analysis on our WhatsApp conversations through our history together. I found some interesting things about us, I hope you like it :)</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    -->
+
+
+
+
+
+
+
+
   </div>
 
   <!-- Bootstrap core JavaScript -->
