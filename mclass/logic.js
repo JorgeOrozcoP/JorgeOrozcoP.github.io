@@ -1,7 +1,7 @@
 
 // on load handler. From:
 // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
-function reqListener () {
+function transferComplete() {
     console.log(this.responseText);
 
     if (this.status >= 200 && this.status < 400) {
@@ -24,7 +24,7 @@ function http_call(){
 
     // --- http request ---
     var request = new XMLHttpRequest();
-    request.addEventListener("load", reqListener);
+    request.addEventListener("load", transferComplete);
 
     var url = 'https://y4b2zohpb7.execute-api.eu-central-1.amazonaws.com/Prod/hello/';
     request.open("GET", url);
