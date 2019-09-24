@@ -1,82 +1,42 @@
 
+// on load handler. From:
+// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+function reqListener () {
+    console.log(this.responseText);
 
+    if (this.status >= 200 && this.status < 400) {
+        result = JSON.parse(this.response)['message'];
+        document.getElementById('text_output').innerHTML = result; // request.responseText
+    } else {
 
-
-function http_call(){
-
-    var Http = new XMLHttpRequest();
-    const url='https://y4b2zohpb7.execute-api.eu-central-1.amazonaws.com/Prod/hello/';
-    Http.open("POST", url);
-
-
-
-    Http.send();
-
-
-
-    Http.onreadystatechange=(e)=>{
-
-        // alert(JSON.parse(Http.response)['message'])
-        alert(Http.responseText)
+        document.getElementById('text_output').innerHTML = this.statusText;
     }
 }
 
-
-
 // https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
-
-function http_call2(){
+function http_call(){
     
-
+    // --- input data ---
     var formData = new FormData();
 
     formData.append('text',document.getElementById('input_text').value);
     // formData.append("image", document.getElementById('input_slct').files[0]);
 
+    // --- http request ---
     var request = new XMLHttpRequest();
+    request.addEventListener("load", reqListener);
 
     var url = 'https://y4b2zohpb7.execute-api.eu-central-1.amazonaws.com/Prod/hello/';
-    request.open("POST", url);
+    request.open("GET", url);
+    
+
     request.send(formData);
-
-    // request.onreadystatechange=(e)=>{
-
-        // alert(JSON.parse(request.response)['message'])
-        // alert(request.responseText)
-    // }
-
-
-    if (request.status >= 200 && request.status < 400) {
-        document.getElementById('text_output').innerHTML = request.responseText
-    } else {
-
-        document.getElementById('text_output').innerHTML = request.statusText 
-    }
 }
 
+function img_preview(){
 
+    img_file = document.getElementById('input_slct').files[0];
 
-
-// from https://www.airpair.com/js/jquery-ajax-post-tutorial
-(function($){
-    function processForm( e ){
-        $.post({
-            url: 'https://y4b2zohpb7.execute-api.eu-central-1.amazonaws.com/Prod/hello/',
-            // dataType: 'text',
-            // type: 'POST',
-            contentType: 'multipart/form-data',
-            data: $(this).serialize(),
-            success: function( data, textStatus, jQxhr ){
-                $('#text_output').text(data);
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
-            }
-        });
-
-        e.preventDefault();
-    }
-
-    $('#input_form').submit( processForm );
-})(jQuery);
-
+    document.getElementById('input_img').src = window.URL.createObjectURL(img_file); 
+    document.getElementById('input_img').setAttribute('class', 'img-fluid');
+}

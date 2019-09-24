@@ -12,7 +12,6 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> 
-  <script src="vendor/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="mclass/logic.js"></script>
 
 </head>
@@ -46,15 +45,10 @@
     <div class="row">
       <div class="col-md-5">
         <img id="input_img" />
-        <!--NEED TO CHANGE THIS SECTION!!!!!-->
-        <!--form method="POST" action="http://localhost:5000/predict" enctype=multipart/form-data id='input_form'-->
-              <!-- image preview taken from https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded-->
-              
-              Select an image to analyze : <!--input type="file"  onchange="document.getElementById('input_img').src = window.URL.createObjectURL(this.files[0]); document.getElementById('input_img').setAttribute('class', 'img-fluid')" id="input_slct"name="image" /><br /-->
-              <hr/>
+              Select an image to analyze : <input type="file"  onchange="img_preview()" id="input_slct"name="image" /><br />
+              <hr />
               <input type="text" id="input_text" name="get_test" /><br />
-              <input type="button" id="submit_btn" value="Analyze" onclick='http_call2()' /><br />
-        <!--/form-->
+              <input type="button" id="submit_btn" value="Analyze" onclick='http_call()' /><br />
       </div>
       <div class="col-md-2"></div>
       <div class="col-md-5">
