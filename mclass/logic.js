@@ -19,15 +19,16 @@ function http_call(){
     // --- input data ---
     var formData = new FormData();
 
-    formData.append('text',document.getElementById('input_text').value);
-    // formData.append("image", document.getElementById('input_slct').files[0]);
+    // formData.append('text', document.getElementById('input_text').value);
+    formData.append("image", document.getElementById('input_slct').files[0]);
 
     // --- http request ---
     var request = new XMLHttpRequest();
     request.addEventListener("load", transferComplete);
 
     var url = 'https://y4b2zohpb7.execute-api.eu-central-1.amazonaws.com/Prod/hello/';
-    request.open("GET", url);
+    // var url = 'http://127.0.0.1:5000/'
+    request.open("POST", url);
     
 
     request.send(formData);
