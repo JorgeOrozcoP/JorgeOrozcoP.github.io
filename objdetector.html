@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body onload="body_load()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
@@ -33,18 +33,28 @@
         <p class="lead">By Alexander Busch and Jorge Orozco</p>
       </div>
     </div>
+
+    <!--Readme text-->
+      <div class="row">
+        <div class="col-md-12">
+          <p>This is a readme text. It should contain an intro to the project and say that we want a good grade. We are ready for the model integration into the architecture! </p>
+          <hr />
+        </div>
+      </div>
+        
+
+    <!--Exectution-->
     <div class="row">
       <div class="col-md-5">
-        <img id="input_img" />
+        <img src='' id="preview_img" class='img-fluid' />
               Select an image to analyze : <input type="file"  onchange="img_preview()" id="input_slct" name="image" /><br />
               <hr />
-              <!--input type="text" id="input_text" name="get_test" /><br /-->
-              <input type="button" id="submit_btn" value="Analyze" onclick='http_call()' /><br />
+              Status: <p id='status'></p><br />
+              <input type="button" id="submit_btn" value="Analyze" onclick='http_call()' disabled /><br />
       </div>
       <div class="col-md-2"></div>
       <div class="col-md-5">
-        <img id="output_img" />
-        <p id='text_output'></p>
+        <img src='' id="output_img" class='img-fluid' />
       </div>
     </div>
   </div>
