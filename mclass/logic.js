@@ -102,7 +102,8 @@ function http_call(){
         request.addEventListener("error", transferFailed);
         request.addEventListener("abort", transferCanceled);
 
-        var url = 'https://y4b2zohpb7.execute-api.eu-central-1.amazonaws.com/Prod/detection/';
+        // var url = 'https://y4b2zohpb7.execute-api.eu-central-1.amazonaws.com/Prod/detection/';
+        var url = 'https://y4b2zohpb7.execute-api.eu-central-1.amazonaws.com/Prod/detect/';
         // var url = 'http://127.0.0.1:3000/detection';
         request.open("POST", url);
         
