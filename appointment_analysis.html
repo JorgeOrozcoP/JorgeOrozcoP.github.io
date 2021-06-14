@@ -14286,7 +14286,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14309,7 +14309,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[80]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;impfstoffbot2.csv&#39;</span><span class="p">)</span>
@@ -14329,7 +14329,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[80]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
@@ -14427,282 +14427,57 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[81]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;is_appointment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;??&#39;</span> <span class="k">else</span> <span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># filter informative tweets</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;is_appointment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;??&#39;</span> <span class="k">else</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[82]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;is_appointment&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[82]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Text</th>
-      <th>UTC</th>
-      <th>is_appointment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>71</th>
-      <td>@bingo4508Wu Wish you all the very good luck! ...</td>
-      <td>2021-05-29T12:42:52.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>Hey hey hey! ?? � So how is everyone�s weekend...</td>
-      <td>2021-05-29T12:39:52.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>73</th>
-      <td>RT @itsfi0na : @Dyana_ Hey no worries! Check o...</td>
-      <td>2021-05-29T12:23:11.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>74</th>
-      <td>@TKO57435668 Nada?</td>
-      <td>2021-05-29T12:22:31.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td>@Redunka_ Sorry to hear that :(</td>
-      <td>2021-05-29T12:20:15.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>@melikeyilmazel :(</td>
-      <td>2021-05-29T12:19:59.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>@sushidoe @melikeyilmazel Unfortunately you ha...</td>
-      <td>2021-05-29T12:18:50.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>303</th>
-      <td>RT @AlicerBertram : F�r alle, die in Berlin #I...</td>
-      <td>2021-05-20T18:24:28.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>414</th>
-      <td>We are also incredibly happy to help you findi...</td>
-      <td>2021-05-20T11:09:06.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>415</th>
-      <td>Given we're dealing with an open-source projec...</td>
-      <td>2021-05-20T11:08:27.000Z</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>416</th>
-      <td>Hey everyone, there are a few ways you may con...</td>
-      <td>2021-05-20T11:07:34.000Z</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[83]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;is_appointment&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">data</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[83]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Text</th>
-      <th>UTC</th>
-      <th>is_appointment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>?? Available slots found at Messe Berlin on 10...</td>
-      <td>2021-06-05T08:40:17.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>?? Available slots found at Messe Berlin on 9....</td>
-      <td>2021-06-05T08:37:37.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>?? Available slots found at Messe Berlin on 3....</td>
-      <td>2021-06-05T08:25:37.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>?? Available slots found at Messe Berlin on 8....</td>
-      <td>2021-06-05T08:08:27.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>?? Available slots found at Messe Berlin on 7....</td>
-      <td>2021-06-05T08:03:57.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1447</th>
-      <td>?? Appointments on Erika-He�-Eisstadion availa...</td>
-      <td>2021-05-12T02:32:40.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>1448</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12T02:18:21.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>1449</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12T02:15:45.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>1450</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12T01:48:54.000Z</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>1451</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12T01:44:55.000Z</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-<p>1441 rows × 3 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[84]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;UTC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;UTC&#39;</span><span class="p">],</span> <span class="n">infer_datetime_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># non-informative tweets</span>
+<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;is_appointment&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># only use informative tweets</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;is_appointment&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># format datetime data</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;UTC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;UTC&#39;</span><span class="p">],</span> <span class="n">infer_datetime_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14713,7 +14488,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[85]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;UTC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span>
@@ -14732,7 +14507,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[85]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -14747,105 +14522,15 @@ a.anchor-link {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[86]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[86]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Text</th>
-      <th>UTC</th>
-      <th>is_appointment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>?? Available slots found at Messe Berlin on 10...</td>
-      <td>2021-06-05 08:40:17+00:00</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>?? Available slots found at Messe Berlin on 9....</td>
-      <td>2021-06-05 08:37:37+00:00</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>?? Available slots found at Messe Berlin on 3....</td>
-      <td>2021-06-05 08:25:37+00:00</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>?? Available slots found at Messe Berlin on 8....</td>
-      <td>2021-06-05 08:08:27+00:00</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>?? Available slots found at Messe Berlin on 7....</td>
-      <td>2021-06-05 08:03:57+00:00</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_location</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get locations in tweets</span>
+
+<span class="k">def</span> <span class="nf">get_location</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="n">locations</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Messe Berlin&#39;</span><span class="p">,</span> 
              <span class="s1">&#39;Flughafen Tempelhof&#39;</span><span class="p">,</span> 
              <span class="s1">&#39;Flughafen Berlin-Tegel&#39;</span><span class="p">,</span>
@@ -14868,11 +14553,13 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[87]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">text</span><span class="p">:</span> <span class="n">get_location</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;not in list&#39;</span><span class="p">]</span> <span class="c1"># make  sure that there is only useful data</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># make sure that all tweets have valid locations</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">text</span><span class="p">:</span> <span class="n">get_location</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;not in list&#39;</span><span class="p">]</span> 
 </pre></div>
 
      </div>
@@ -14888,7 +14575,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[87]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
@@ -14920,432 +14607,6 @@ a.anchor-link {
   <tbody>
   </tbody>
 </table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Text</th>
-      <th>UTC</th>
-      <th>Created At</th>
-      <th>is_appointment</th>
-      <th>location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>?? Available slots found at Messe Berlin on 13...</td>
-      <td>2021-06-03 17:24:23+00:00</td>
-      <td>Thu Jun 03 17:24:23 +0000 2021</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>?? Available slots found at Messe Berlin on 7....</td>
-      <td>2021-06-03 14:58:18+00:00</td>
-      <td>Thu Jun 03 14:58:18 +0000 2021</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>?? Available slots found at Arena Berlin on 12...</td>
-      <td>2021-06-03 14:47:40+00:00</td>
-      <td>Thu Jun 03 14:47:40 +0000 2021</td>
-      <td>True</td>
-      <td>Arena Berlin</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>?? Available slots found at Arena Berlin on 8....</td>
-      <td>2021-06-03 14:08:32+00:00</td>
-      <td>Thu Jun 03 14:08:32 +0000 2021</td>
-      <td>True</td>
-      <td>Arena Berlin</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>?? Available slots found at Messe Berlin on 6....</td>
-      <td>2021-06-03 14:00:38+00:00</td>
-      <td>Thu Jun 03 14:00:38 +0000 2021</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[88]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;(\d+.\d+.\d+)&#39;</span><span class="p">)</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y&#39;</span><span class="p">)</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">&#39;Europe/Berlin&#39;</span><span class="p">))</span>
-<span class="n">data</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[88]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Text</th>
-      <th>UTC</th>
-      <th>is_appointment</th>
-      <th>location</th>
-      <th>time_of_appointment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>?? Available slots found at Messe Berlin on 10...</td>
-      <td>2021-06-05 08:40:17+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-10 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>?? Available slots found at Messe Berlin on 9....</td>
-      <td>2021-06-05 08:37:37+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-09 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>?? Available slots found at Messe Berlin on 3....</td>
-      <td>2021-06-05 08:25:37+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-03 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>?? Available slots found at Messe Berlin on 8....</td>
-      <td>2021-06-05 08:08:27+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-08 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>?? Available slots found at Messe Berlin on 7....</td>
-      <td>2021-06-05 08:03:57+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-07 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1447</th>
-      <td>?? Appointments on Erika-He�-Eisstadion availa...</td>
-      <td>2021-05-12 02:32:40+00:00</td>
-      <td>True</td>
-      <td>Erika-He�-Eisstadion</td>
-      <td>2021-06-26 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>1448</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 02:18:21+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-28 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>1449</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 02:15:45+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>1450</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 01:48:54+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-    </tr>
-    <tr>
-      <th>1451</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 01:44:55+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-    </tr>
-  </tbody>
-</table>
-<p>1441 rows × 5 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[89]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;UTC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="s1">&#39;Europe/Berlin&#39;</span><span class="p">)</span>
-<span class="n">data</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[89]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Text</th>
-      <th>UTC</th>
-      <th>is_appointment</th>
-      <th>location</th>
-      <th>time_of_appointment</th>
-      <th>Berlin_time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>?? Available slots found at Messe Berlin on 10...</td>
-      <td>2021-06-05 08:40:17+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-10 00:00:00+02:00</td>
-      <td>2021-06-05 10:40:17+02:00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>?? Available slots found at Messe Berlin on 9....</td>
-      <td>2021-06-05 08:37:37+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-09 00:00:00+02:00</td>
-      <td>2021-06-05 10:37:37+02:00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>?? Available slots found at Messe Berlin on 3....</td>
-      <td>2021-06-05 08:25:37+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-03 00:00:00+02:00</td>
-      <td>2021-06-05 10:25:37+02:00</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>?? Available slots found at Messe Berlin on 8....</td>
-      <td>2021-06-05 08:08:27+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-08 00:00:00+02:00</td>
-      <td>2021-06-05 10:08:27+02:00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>?? Available slots found at Messe Berlin on 7....</td>
-      <td>2021-06-05 08:03:57+00:00</td>
-      <td>True</td>
-      <td>Messe Berlin</td>
-      <td>2021-07-07 00:00:00+02:00</td>
-      <td>2021-06-05 10:03:57+02:00</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1447</th>
-      <td>?? Appointments on Erika-He�-Eisstadion availa...</td>
-      <td>2021-05-12 02:32:40+00:00</td>
-      <td>True</td>
-      <td>Erika-He�-Eisstadion</td>
-      <td>2021-06-26 00:00:00+02:00</td>
-      <td>2021-05-12 04:32:40+02:00</td>
-    </tr>
-    <tr>
-      <th>1448</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 02:18:21+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-28 00:00:00+02:00</td>
-      <td>2021-05-12 04:18:21+02:00</td>
-    </tr>
-    <tr>
-      <th>1449</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 02:15:45+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-      <td>2021-05-12 04:15:45+02:00</td>
-    </tr>
-    <tr>
-      <th>1450</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 01:48:54+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-      <td>2021-05-12 03:48:54+02:00</td>
-    </tr>
-    <tr>
-      <th>1451</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 01:44:55+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-      <td>2021-05-12 03:44:55+02:00</td>
-    </tr>
-  </tbody>
-</table>
-<p>1441 rows × 6 columns</p>
 </div>
 </div>
 
@@ -15358,10 +14619,46 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[90]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;posted_hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># format time of appintment </span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;(\d+.\d+.\d+)&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">&#39;Europe/Berlin&#39;</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># transform UTC in berlin time. This is time tweet was posted</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;UTC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="s1">&#39;Europe/Berlin&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># extract data from posted tweet time</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;posted_hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;posted_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">minute</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;posted_sec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">second</span><span class="p">)</span>
 </pre></div>
@@ -15374,11 +14671,12 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[119]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;posted_month_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;/2021&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">))</span>
-<span class="c1"># data[&#39;posted_month_day&#39;] = data[&#39;posted_month_day&#39;].to_datetime(format=&#39;%d/%m/%Y&#39;)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># used to analyze month and day sequence</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;posted_month_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;/2021&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15389,10 +14687,12 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[91]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;posted_hour_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;posted_hour&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">round</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;posted_min&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># used to grouop by hour an minute</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;posted_hour_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;posted_hour&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">round</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;posted_min&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15403,10 +14703,12 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[122]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># final data</span>
+
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15422,7 +14724,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[122]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
 
@@ -15454,10 +14756,8 @@ a.anchor-link {
       <th>posted_hour</th>
       <th>posted_min</th>
       <th>posted_sec</th>
-      <th>posted_hour_min</th>
-      <th>time_diff</th>
-      <th>time_diff_days</th>
       <th>posted_month_day</th>
+      <th>posted_hour_min</th>
     </tr>
   </thead>
   <tbody>
@@ -15472,10 +14772,8 @@ a.anchor-link {
       <td>10</td>
       <td>40</td>
       <td>17</td>
-      <td>10.7</td>
-      <td>34 days 13:19:43</td>
-      <td>34</td>
       <td>2021-06-05</td>
+      <td>10.7</td>
     </tr>
     <tr>
       <th>1</th>
@@ -15488,10 +14786,8 @@ a.anchor-link {
       <td>10</td>
       <td>37</td>
       <td>37</td>
-      <td>10.6</td>
-      <td>33 days 13:22:23</td>
-      <td>33</td>
       <td>2021-06-05</td>
+      <td>10.6</td>
     </tr>
     <tr>
       <th>2</th>
@@ -15504,10 +14800,8 @@ a.anchor-link {
       <td>10</td>
       <td>25</td>
       <td>37</td>
-      <td>10.4</td>
-      <td>27 days 13:34:23</td>
-      <td>27</td>
       <td>2021-06-05</td>
+      <td>10.4</td>
     </tr>
     <tr>
       <th>3</th>
@@ -15520,10 +14814,8 @@ a.anchor-link {
       <td>10</td>
       <td>8</td>
       <td>27</td>
-      <td>10.1</td>
-      <td>32 days 13:51:33</td>
-      <td>32</td>
       <td>2021-06-05</td>
+      <td>10.1</td>
     </tr>
     <tr>
       <th>4</th>
@@ -15536,110 +14828,11 @@ a.anchor-link {
       <td>10</td>
       <td>3</td>
       <td>57</td>
-      <td>10.1</td>
-      <td>31 days 13:56:03</td>
-      <td>31</td>
       <td>2021-06-05</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1447</th>
-      <td>?? Appointments on Erika-He�-Eisstadion availa...</td>
-      <td>2021-05-12 02:32:40+00:00</td>
-      <td>True</td>
-      <td>Erika-He�-Eisstadion</td>
-      <td>2021-06-26 00:00:00+02:00</td>
-      <td>2021-05-12 04:32:40+02:00</td>
-      <td>4</td>
-      <td>32</td>
-      <td>40</td>
-      <td>4.5</td>
-      <td>44 days 19:27:20</td>
-      <td>44</td>
-      <td>2021-05-12</td>
-    </tr>
-    <tr>
-      <th>1448</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 02:18:21+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-28 00:00:00+02:00</td>
-      <td>2021-05-12 04:18:21+02:00</td>
-      <td>4</td>
-      <td>18</td>
-      <td>21</td>
-      <td>4.3</td>
-      <td>76 days 19:41:39</td>
-      <td>76</td>
-      <td>2021-05-12</td>
-    </tr>
-    <tr>
-      <th>1449</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 02:15:45+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-      <td>2021-05-12 04:15:45+02:00</td>
-      <td>4</td>
-      <td>15</td>
-      <td>45</td>
-      <td>4.2</td>
-      <td>75 days 19:44:15</td>
-      <td>75</td>
-      <td>2021-05-12</td>
-    </tr>
-    <tr>
-      <th>1450</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 01:48:54+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-      <td>2021-05-12 03:48:54+02:00</td>
-      <td>3</td>
-      <td>48</td>
-      <td>54</td>
-      <td>3.8</td>
-      <td>75 days 20:11:06</td>
-      <td>75</td>
-      <td>2021-05-12</td>
-    </tr>
-    <tr>
-      <th>1451</th>
-      <td>?? Appointments on Flughafen Berlin-Tegel avai...</td>
-      <td>2021-05-12 01:44:55+00:00</td>
-      <td>True</td>
-      <td>Flughafen Berlin-Tegel</td>
-      <td>2021-07-27 00:00:00+02:00</td>
-      <td>2021-05-12 03:44:55+02:00</td>
-      <td>3</td>
-      <td>44</td>
-      <td>55</td>
-      <td>3.7</td>
-      <td>75 days 20:15:05</td>
-      <td>75</td>
-      <td>2021-05-12</td>
+      <td>10.1</td>
     </tr>
   </tbody>
 </table>
-<p>1441 rows × 13 columns</p>
 </div>
 </div>
 
@@ -16639,7 +15832,7 @@ Name: location, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[109]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_of_appointment&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Berlin_time&#39;</span><span class="p">]</span>
@@ -16653,7 +15846,7 @@ Name: location, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[110]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">days</span><span class="p">)</span>
@@ -16673,13 +15866,13 @@ Name: location, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[111]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;std: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -16699,10 +15892,10 @@ Name: location, dtype: int64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>31.906315058986813
-24.82483569002583
-80
-1
+<pre>mean: 31.906315058986813
+std:  24.82483569002583
+max:  80
+min:  1
 </pre>
 </div>
 </div>
@@ -16715,21 +15908,20 @@ Name: location, dtype: int64</pre>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In Messe Berlin, the mean and std waiting time are lower. This seems a good location to get vaccinated.</p>
-<p>Flughafen Berlin-Tegel has a mean waiting time of 71 days, with a very low std. This means that likely I will get an appointment far in the future if I book here.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[112]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;Messe Berlin&#39;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;std: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -16749,10 +15941,10 @@ Name: location, dtype: int64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>20.22758620689655
-13.222874064970073
-74
-2
+<pre>mean: 20.22758620689655
+std:  13.222874064970073
+max:  74
+min:  2
 </pre>
 </div>
 </div>
@@ -16761,18 +15953,24 @@ Name: location, dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Flughafen Berlin-Tegel has a mean waiting time of 71 days, with a very low std. This means that likely I will get an appointment far in the future if I book here.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[113]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;Flughafen Berlin-Tegel&#39;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;std: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loc</span><span class="p">][</span><span class="s1">&#39;time_diff_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -16792,10 +15990,10 @@ Name: location, dtype: int64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>71.96527777777777
-3.877772258991688
-80
-60
+<pre>mean: 71.96527777777777
+std:  3.877772258991688
+max:  80
+min:  60
 </pre>
 </div>
 </div>
